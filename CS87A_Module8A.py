@@ -1,3 +1,11 @@
+'''
+created 7/20/25
+
+sample cypher/decypher function
+
+@author Oscar Chaltiel 
+'''
+
 import random
 
 shift_key = 0  # store the random shift globally 
@@ -53,7 +61,7 @@ def main():
     encoded_text = cipher(user_text)
     print(f"Here is your encoded message: {encoded_text}")
 
-    decoded_text = decipher(encoded)
+    decoded_text = decipher(encoded_text)
     print(f"Here is your decoded message: {decoded_text}")
 
     if decoded_text == user_text:
