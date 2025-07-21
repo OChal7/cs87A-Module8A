@@ -1,37 +1,34 @@
 import random
 
-shift_key = 0  # global variable to store the random shift
+shift_key = 0  # store the random shift globally 
 
 def make_key():
-    """Pick a random shift between 1 and 26 and store it in shift_key."""
+    # pick a random shift between 1 and 26 and store it in shift_key.
     global shift_key
     shift_key = random.randint(1, 26)
     return shift_key
 
 def shift_char(ch, shift):
-    """Shift a single character by 'shift' places, wrapping around the alphabet."""
 
-    # If character is uppercase A–Z
+    # if character is uppercase A–Z
     if ch.isupper():
         # Get its position in alphabet (A=0, B=1, … Z=25)
         position = ord(ch) - ord('A')
-        # Apply shift with wrap-around
         new_position = (position + shift) % 26
         # Convert back to a character
         new_char = chr(ord('A') + new_position)
         return new_char
 
-    # If character is lowercase a–z
+    # if character is lowercase a–z
     elif ch.islower():
         # Get its position in alphabet (a=0, b=1, … z=25)
         position = ord(ch) - ord('a')
-        # Apply shift with wrap-around
         new_position = (position + shift) % 26
         # Convert back to a character
         new_char = chr(ord('a') + new_position)
         return new_char
 
-    # If it's not a letter (space, punctuation, number), leave it alone
+    # if it's not a letter leave it alone
     else:
         return ch
 
