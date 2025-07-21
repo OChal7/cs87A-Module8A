@@ -1,7 +1,7 @@
 '''
 created 7/20/25
 
-sample cypher/decypher function
+CS87A Module8 Cypher/Decypher Assignment
 
 @author Oscar Chaltiel 
 '''
